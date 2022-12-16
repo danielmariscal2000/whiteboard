@@ -1,0 +1,96 @@
+#circularcursor {
+    background-color: transparent;
+    border:1px solid black;    
+    height:25px;
+    width:25px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    position: absolute;
+    z-index: 1;
+  }
+#miCanvas{
+    border: 1px solid black;
+}
+.canvas-btn {
+    position: absolute;
+    margin-left:60%;
+    margin-top: 5%;
+    border-radius: 5px;
+    border-style: solid;
+    padding: 5px 5px;
+    border-color: gray;
+    border-width: thin;
+}
+
+.btn-width {
+    min-width: 50px;
+}
+
+.mouse-state {
+    cursor: none;
+}
+.title2{
+    margin: 30px;
+}
+i{
+    margin: 30px;
+}
+.usuario{
+    font-size: 30px;
+    margin-left:30px ;
+}
+hr{
+    height: 5px;
+}
+.btn-global{
+    margin-left: 10px;
+    color: white;
+    background-color: rgb(5, 5, 77);
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+.btn-global2{
+    margin-left: 10px;
+    color: white;
+    background-color: rgb(71, 1, 51);
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.inputT{
+    margin-left: 20px;
+    font-size: 15px;
+    width: 230px;
+    height: 30px;
+}
+.btn-color{
+    height: 10px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+.option{
+    margin: 10px; 
+}
+.btn-tamanio{
+    margin-left: 10px;
+    margin-top: 20px;
+    height:30px;
+    width: 40px;
+    font-size: 15px; 
+}
+.figura{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 100px;
+}
+.input-text{
+    padding: 5px;
+    width: 327px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}

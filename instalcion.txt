@@ -1,0 +1,9 @@
+### Instalacion
+-> Abrir la consola de su preferencia
+-> ubicarse en la carpeta que desea descargar el proyecto
+-> ejecutar el comando 
+`npx create-react-app whiteboard`
+Posteriormente a su creacion de la carpeta sustituir la carpeta de `whiteboard`
+con la que se descargo anteririormente
+Y ejecutar el comando de `npm start`
+

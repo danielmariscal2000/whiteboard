@@ -5,6 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { initializeApp } from "firebase/app";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore"; 
+
+// import App4 from "./App4";
 import App2 from "./App2";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -27,13 +30,12 @@ const db = getFirestore(iniApp);
 function Registro() {
   return (
     <>
-      <h1 className="title2">Bienvenido a nuestra herramienta con Canvas</h1>
-      <label className="usuario">Usuario</label>
+      <h1>Bienvenido a nuestra herramienta con Canvas</h1>
+      <label>Usuario</label>
+      <i>En caso de no estar registrado ingrese un nombre de usuario</i>
       <br></br>
-      <i>En caso de no estar registrado ingrese su nombre</i>
-      <br></br>
-      <input className="inputT" type="text" id="domTextElement"></input>
-      <button className="btn-global2" type="button" onClick={getValueInput}>
+      <input type="text" id="domTextElement"></input>
+      <button type="button" onClick={getValueInput}>
         Ingresar
       </button>
     </>
@@ -43,22 +45,26 @@ const getValueInput = () => {
   let inputValue = document.getElementById("domTextElement").value;
   getContactos(db, inputValue);
 };
-
 async function getContactos(db, valor) {
+  await setDoc(doc(db, "usuarios", valor), {nombre:"Daniel",pizarraCompartida:false, grupo:["Daniel","Julia"]});
+
   const usuarios = collection(db, "usuarios");
   const use = await getDocs(usuarios);
+  //   const cityList = use.docs.map(doc => doc.data());
   const datos = use.docs.map((doc) => ({
     id: doc.id,
+    name: doc.data().nombre,
+    compartida: doc.data().pizarraCompartida,
   }));
- let boo=true;
   for (let i = 0; i < datos.length; i++) {
-    if (datos[i].id === valor) {
-      boo=false;
-      root.render(<App2 data={datos[i].id}></App2>);
+    if (datos[i].name === valor) {
+      if (datos[i].compartida === true) {
+        root.render(<App></App>);
+      }
+    } else if (i + 1 === datos.length) {
+      let pasar=datos[0].id;
+      root.render(<App2 data={pasar}></App2>);
     }
-  }
-  if(boo===true){
-      root.render(<App data={valor}></App>);
   }
 }
 reportWebVitals();
